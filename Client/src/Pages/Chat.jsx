@@ -21,8 +21,8 @@ const Chat = () => {
   const dispatch = useDispatch();
   const [currentUser, setCurrentUser] = useState({});
   const [currentChat, setCurrentChat] = useState(undefined);
-  const ENDPOINT = "http://localhost:3030";
-  // const ENDPOINT = "https://chatapps-v5tm.onrender.com";
+  // const ENDPOINT = "http://localhost:3030";
+  const ENDPOINT = "https://chatapps-v5tm.onrender.com";
   const userData = JSON.parse(localStorage.getItem("LoggedInUser"));
   const [socket, setSocket] = useState(null);
   const [onlineUser, setOnlineUser] = useState(null);
