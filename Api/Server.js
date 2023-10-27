@@ -86,6 +86,18 @@ io.on("connection", (socket) => {
       // Handle the case when the receiver is not online
       // You can emit a message or store the message to be delivered later
     }
+    if (senderId) {
+      io.to(senderId.socketId).emit("userMessage", {
+        text,
+        senderId: { ...userData._doc },
+        to: senderId.userId,
+        chatId,
+      });
+      
+    } else {
+      // Handle the case when the receiver is not online
+      // You can emit a message or store the message to be delivered later
+    }
   });
 
   socket.on("disconnect", () => {
@@ -96,11 +108,11 @@ io.on("connection", (socket) => {
     io.emit("onlineUser", users);
   });
 
-  socket.on("isTypeIng", async ({ typeIng, to }) => {
+  socket.on("isTypeIng", async ({ typeIng, to,from }) => {
     const receiverId = users.find((user) => user.userId === to);
-
+    const userData = await UserModel.findById(from);
     if (receiverId) {
-      io.to(receiverId.socketId).emit("isTypeingEmit", { typeIng });
+      io.to(receiverId.socketId).emit("isTypeingEmit", { typeIng,to,from });
     } else {
       // Handle the case when the receiver is not online
       // You can emit a message or store the typing indicator to be delivered later

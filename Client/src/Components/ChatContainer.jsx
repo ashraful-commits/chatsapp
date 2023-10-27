@@ -32,14 +32,33 @@ const ChatContainer = ({
   useEffect(() => {
     if (socket) {
       socket.on("getMessage", (data) => {
-        console.log(data.to);
-        setCurrentMessages((prevMessages) => [
-          ...prevMessages,
-          { text: data?.text, senderId: data?.senderId },
-        ]);
+        if (data.senderId?._id === currentChat?._id) {
+          setCurrentMessages((prevMessages) => [
+            ...prevMessages,
+            { text: data?.text, senderId: data?.senderId },
+          ]);
+        }
       });
       return () => {
         socket.off("getMessage");
+      };
+    }
+  }, [socket]);
+  useEffect(() => {
+    if (socket) {
+      socket.on("userMessage", (data) => {
+        if (
+          data.senderId?._id !== currentChat?._id &&
+          data.senderId?._id === currentUser?._id
+        ) {
+          setCurrentMessages((prevMessages) => [
+            ...prevMessages,
+            { text: data?.text, senderId: data?.senderId },
+          ]);
+        }
+      });
+      return () => {
+        socket.off("userMessage");
       };
     }
   }, [socket]);
