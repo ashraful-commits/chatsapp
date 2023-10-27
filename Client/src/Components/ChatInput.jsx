@@ -78,7 +78,7 @@ const Container = styled.div`
   justify-content: space-around;
   background-color: #100066;
   padding: 0 4rem;
-
+  z-index: 999999;
   .button-container {
     display: flex;
     align-items: center;
