@@ -79,15 +79,18 @@ const Container = styled.div`
   background-color: #100066;
   padding: 0 4rem;
   z-index: 999999;
+
   .button-container {
     display: flex;
     align-items: center;
     color: white;
     gap: 2rem;
     position: relative;
+    z-index: 999;
     .emoji {
       position: absolute;
       left: 0;
+      z-index: 99999999;
       svg {
         font-size: 1.5rem;
         color: #ffff00c8;

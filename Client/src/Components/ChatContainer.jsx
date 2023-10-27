@@ -202,6 +202,8 @@ const Container = styled.div`
   overflow: hidden;
   grid-template-rows: 70px auto 60px;
   background-color: #080e39;
+  z-index: 0;
+  position: relative;
   .chat-header {
     display: flex;
     justify-content: space-between;
