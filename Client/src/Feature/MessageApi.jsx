@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const url = "https://chat-app-ir8p.onrender.com";
+const url = "https://chatapps-v5tm.onrender.com";
 // const url = "http://localhost:3030";
 export const getAllMessage = createAsyncThunk(
   "message/getAllMessage",
