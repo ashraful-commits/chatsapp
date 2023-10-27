@@ -72,14 +72,14 @@ const Container = styled.div`
   display: grid;
   height: 100%;
   min-height: 60px;
-  overflow: hidden;
+  /* overflow: hidden; */
   grid-template-columns: 10% 90%;
   align-items: center;
   justify-content: space-around;
   background-color: #100066;
   padding: 0 4rem;
-  z-index: 999999;
 
+  position: relative;
   .button-container {
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@ const Container = styled.div`
     .emoji {
       position: absolute;
       left: 0;
-      z-index: 99999999;
+      z-index: 999999999999;
       svg {
         font-size: 1.5rem;
         color: #ffff00c8;
@@ -102,6 +102,8 @@ const Container = styled.div`
         background-color: #080420;
         border-color: orange;
         box-shadow: 0 0 30px orange;
+        z-index: 99999999999;
+
         .epr-search-container {
           input {
             background-color: #080420;

@@ -96,7 +96,6 @@ const Chat = () => {
   );
 };
 const Container = styled.div`
-  /* height: 100vh; */
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -104,12 +103,14 @@ const Container = styled.div`
   gap: 1rem;
   align-items: center;
   background-color: white;
+  z-index: 0;
   .container {
     height: 100vh;
     width: 100vw;
     background-color: white;
     display: grid;
     grid-template-columns: 20% 80%;
+    z-index: 0;
   }
 
   /* Medium devices (laptops) */

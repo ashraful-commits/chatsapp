@@ -203,7 +203,7 @@ const Container = styled.div`
   grid-template-rows: 70px auto 60px;
   background-color: #080e39;
   z-index: 0;
-  position: relative;
+
   .chat-header {
     display: flex;
     justify-content: space-between;
@@ -236,6 +236,9 @@ const Container = styled.div`
     text-align: center;
     gap: 1rem;
     overflow: auto;
+
+    z-index: 0;
+
     .message {
       display: flex;
       align-content: center;
