@@ -343,5 +343,15 @@ const Container = styled.div`
       }
     }
   }
+  @media (max-width: 767px) {
+    .chat-messages {
+      padding: 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      overflow: auto;
+    }
+  }
 `;
 export default ChatContainer;
