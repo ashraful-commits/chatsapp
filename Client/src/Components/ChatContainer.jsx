@@ -217,7 +217,14 @@ const ChatContainer = ({
           )}
         </div>
       </div>
-      <Box sx={{ width: "100%", borderTop: "2px solid #eee" }}>
+      <Box
+        sx={{
+          width: "100%",
+          borderTop: "2px solid #eee",
+          position: "sticky",
+          bottom: 0,
+        }}
+      >
         <ChatInput
           handleSendMessage={handleSendMessage}
           socket={socket}

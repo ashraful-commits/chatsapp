@@ -72,7 +72,6 @@ const ChatInput = ({ handleSendMessage, socket, currentChat, currentUser }) => {
 };
 const Container = styled.div`
   display: grid;
-  height: 100%;
   min-height: 60px;
   grid-template-columns: 10% 90%;
   align-items: center;
@@ -206,7 +205,6 @@ const Container = styled.div`
     }
     button {
       border-radius: 2rem;
-      height: 100%;
       width: 70px;
       display: flex;
       justify-content: center;
