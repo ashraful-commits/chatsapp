@@ -97,7 +97,7 @@ const Container = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 100%;
-    background-color: #effded;
+    background-color: #ebfde8;
     opacity: 0.9;
     border-radius: 30px;
     position: absolute;
@@ -148,7 +148,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     border-radius: 2rem;
-    background-color: #ffffff;
+    background-color: #afffbb;
     border-radius: 2rem;
     overflow: hidden;
     z-index: 99999;

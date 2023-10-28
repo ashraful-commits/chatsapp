@@ -491,7 +491,7 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 60px auto 60px;
   overflow: hidden;
-  background-color: #fff8f1;
+  background-color: #c9ffd1;
   z-index: 0;
   position: relative;
   ::-webkit-scrollbar {
@@ -513,7 +513,7 @@ const Container = styled.div`
     width: 300px;
     height: 300px;
     border-radius: 100%;
-    background-image: radial-gradient(#ffe3e3, #ffefef);
+    background-color: #b9ffad;
     filter: blur(2px);
     z-index: 1;
     left: 55%;
@@ -524,7 +524,7 @@ const Container = styled.div`
     width: 300px;
     height: 300px;
     border-radius: 100%;
-    background-image: radial-gradient(#ffe0e0, #ffefef);
+    background-color: #bcffa8;
     filter: blur(5px);
     z-index: 1;
     right: 55%;
@@ -538,7 +538,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    border-bottom: 1px solid #ffdbdb;
+    border-bottom: 1px solid #ffb8ab;
     padding: 0 1rem;
     z-index: 99999;
     position: relative;

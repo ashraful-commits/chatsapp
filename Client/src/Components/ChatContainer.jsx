@@ -217,7 +217,7 @@ const ChatContainer = ({
           )}
         </div>
       </div>
-      <Box sx={{ width: "100%", backgroundColor: "#ffd3d3" }}>
+      <Box sx={{ width: "100%", borderTop: "2px solid #eee" }}>
         <ChatInput
           handleSendMessage={handleSendMessage}
           socket={socket}
@@ -302,7 +302,8 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    background-color: #ffdada;
+    border-bottom: 1px solid #ffb4b4;
+    background-color: #f9fff8;
     position: relative;
     z-index: 1;
     overflow: hidden;
