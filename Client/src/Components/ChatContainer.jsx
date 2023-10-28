@@ -187,7 +187,7 @@ const ChatContainer = ({
                   </Box>
                   <div className="menu">
                     <button onClick={() => setMsgMenu(!msgMenu)}>
-                      <BsThreeDotsVertical color="gray" />
+                      <BsThreeDotsVertical color="#6f6f6f" />
                     </button>
                     <div className="menu-item">
                       {msgMenu && (
@@ -425,12 +425,13 @@ const Container = styled.div`
         .menu {
           position: relative;
           opacity: 0;
-          z-index: 9999;
+          z-index: 999999999;
           .menu-item {
             position: absolute;
             background-color: #fff;
             padding: 5px;
-            right: 0;
+            top: -40px;
+            right: -30px;
             box-shadow: 0 0 10px #d8d8d8;
             border-radius: 10px;
             ul {
@@ -466,7 +467,8 @@ const Container = styled.div`
         gap: 10px;
         border: 1px solid #ff0505;
         padding: 20px;
-        #baf#6cff91a7 &:hover {
+
+        &:hover {
           .menu {
             opacity: 1;
           }
@@ -475,11 +477,13 @@ const Container = styled.div`
           position: relative;
           opacity: 0;
           .menu-item {
+            z-index: 999999999;
             position: absolute;
             background-color: #fff;
             padding: 5px;
             box-shadow: 0 0 10px #d8d8d8;
             border-radius: 10px;
+            top: -60px;
             ul {
               display: flex;
               flex-direction: column;
@@ -497,7 +501,7 @@ const Container = styled.div`
             background-color: transparent;
             svg {
               font-size: 18px;
-              color: white;
+              color: #323232;
             }
           }
         }
