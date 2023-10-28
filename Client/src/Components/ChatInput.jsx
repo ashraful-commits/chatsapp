@@ -173,6 +173,9 @@ const Container = styled.div`
       align-items: center;
       background-color: orangered;
       border: none;
+      &:hover {
+        background-color: #ff0000;
+      }
       svg {
         font-size: 2rem;
         color: white;
