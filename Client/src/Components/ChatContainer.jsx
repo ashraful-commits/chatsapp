@@ -392,7 +392,7 @@ const Container = styled.div`
     .sender {
       justify-content: flex-end;
       .content {
-        color: white;
+        color: #525252;
         border-bottom-right-radius: 0;
         display: flex;
         gap: 10px;
@@ -433,7 +433,7 @@ const Container = styled.div`
             background-color: transparent;
             svg {
               font-size: 18px;
-              color: white;
+              color: #535353;
             }
           }
         }
