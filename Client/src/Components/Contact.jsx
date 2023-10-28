@@ -125,7 +125,7 @@ const Contact = ({
                     })}
                   />
                 </Box>
-                <Box sx={{ padding: "0 10px", height: "100vh" }}>
+                <Box sx={{ padding: "0 10px" }}>
                   <Typography
                     sx={{
                       borderBottom: "1px solid gray",
@@ -138,7 +138,7 @@ const Contact = ({
                   >
                     Chats
                   </Typography>
-                  <List sx={{ overflow: "auto", height: "100vh" }}>
+                  <List sx={{ overflow: "auto", height: "100%" }}>
                     {contact?.filter((element) => {
                       return chats?.some((chat) =>
                         chat.members.some((item) => item === element._id)
