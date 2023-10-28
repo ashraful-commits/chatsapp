@@ -105,6 +105,7 @@ const Container = styled.div`
   align-items: center;
   background-color: white;
   z-index: 0;
+
   .container {
     height: 100vh;
     width: 100vw;
@@ -112,6 +113,8 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 20% 80%;
     z-index: 0;
+    border-radius: 50px;
+    box-shadow: 0 0 10px #ffd0d0 inset;
   }
 
   /* Medium devices (laptops) */

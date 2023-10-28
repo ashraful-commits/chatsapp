@@ -93,7 +93,7 @@ const Contact = ({
                 justifyContent: "space-between",
                 alignContent: "center",
                 position: "relative",
-                bgcolor: "#010455",
+                bgcolor: "rgb(255, 213, 215)",
               }}
             >
               <Box>
@@ -105,10 +105,10 @@ const Contact = ({
                       margin: "10px 0",
                       fontSize: "18px",
                       fontWeight: "bold",
-                      color: "#eee",
+                      color: "#5e5e5e",
                     }}
                   >
-                    All Contacts
+                    Contacts
                   </Typography>
 
                   <AllChats
@@ -124,12 +124,12 @@ const Contact = ({
                 <Box sx={{ padding: "0 10px" }}>
                   <Typography
                     sx={{
-                      borderBottom: "2px solid gray",
+                      borderBottom: "1px solid gray",
                       padding: "5px 0",
                       margin: "10px 0",
                       fontSize: "18px",
                       fontWeight: "bold",
-                      color: "#eee",
+                      color: "#525252",
                     }}
                   >
                     Chats
@@ -166,6 +166,7 @@ const Contact = ({
                                 <ListItemIcon>
                                   {item?.avatarImage ? (
                                     <img
+                                      style={{ width: "30px" }}
                                       src={`data:image/svg+xml;base64,${item?.avatarImage}`}
                                       alt="avatar"
                                     />
@@ -178,7 +179,7 @@ const Contact = ({
                                   )}
                                 </ListItemIcon>
                                 <ListItemText
-                                  sx={{ color: "white" }}
+                                  sx={{ color: "#5f5f5f" }}
                                   primary={item.username}
                                 />
                                 <Box
@@ -260,14 +261,16 @@ const Contact = ({
                   </List>
                 </Box>
               </Box>
-              <Box className="currentUser" sx={{ bgcolor: "black" }}>
+              <Box className="currentUser">
                 <Box
                   className="avatar"
                   sx={{
                     display: "flex",
                     margin: "10px 5px",
-                    padding: "10px 5px",
+                    padding: "5px 5px",
                     gap: "10px",
+                    justifyContent: "space-between",
+                    borderTop: "1px solid gray",
                   }}
                 >
                   <Box className="img" sx={{ width: "30px" }}>
@@ -278,7 +281,6 @@ const Contact = ({
                   </Box>
                   <Box className="username">
                     <Typography
-                      color={"white"}
                       sx={{ textTransform: "capitalize" }}
                       variant="h6"
                     >
@@ -291,10 +293,10 @@ const Contact = ({
             </Box>
           </Drawer>
           <div className="brand">
-            <Link to="/">
+            <Link style={{ textDecoration: "none" }} to="/">
               <img src={logo} alt="logo" />
             </Link>
-            <Link to="/">
+            <Link style={{ textDecoration: "none" }} to="/">
               <h3>
                 Chat<span>App</span>
               </h3>
@@ -308,7 +310,7 @@ const Contact = ({
           <div className="contacts">
             <Typography
               sx={{
-                color: "#e22200",
+                color: "#6c6c6c",
                 textAlign: "start",
                 fontSize: "18px",
                 fontWeight: "bold",
@@ -316,7 +318,7 @@ const Contact = ({
                 padding: "10px 0",
               }}
             >
-              All Contacts
+              Contacts
             </Typography>
             <Box
               sx={{
@@ -336,7 +338,7 @@ const Contact = ({
             </Box>
             <Typography
               sx={{
-                color: "#e22200",
+                color: "#6c6c6c",
                 textAlign: "start",
                 fontSize: "18px",
                 fontWeight: "bold",
@@ -431,7 +433,7 @@ const Contact = ({
               </Typography>
             )}
           </div>
-          <Box className="currentUser" sx={{ bgcolor: "black" }}>
+          <Box className="currentUser">
             <Box
               className="avatar"
               sx={{
@@ -468,7 +470,7 @@ const Contact = ({
                 <Box className="username">
                   <Typography
                     color={"white"}
-                    sx={{ textTransform: "capitalize", fontStyle: "italic" }}
+                    sx={{ textTransform: "capitalize" }}
                   >
                     {currentUserName}
                   </Typography>
@@ -477,6 +479,9 @@ const Contact = ({
               <Logout />
             </Box>
           </Box>
+
+          <div className="blur"></div>
+          <div className="blur1"></div>
         </Container>
       )}
     </>
@@ -486,21 +491,45 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 60px auto 60px;
   overflow: hidden;
-  background-color: #001552;
+  background-color: #fff8f1;
+  z-index: 0;
+  position: relative;
   ::-webkit-scrollbar {
     width: 1px;
     height: 3px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #0d01fa;
+    background-color: #e8e8e8;
     border-radius: 0px;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #fd7200;
+    background-color: #ffdcc0;
   }
+  .blur {
+    position: absolute;
 
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-image: radial-gradient(#ffe3e3, #ffefef);
+    filter: blur(2px);
+    z-index: 1;
+    left: 55%;
+    top: 10%;
+  }
+  .blur1 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-image: radial-gradient(#ffe0e0, #ffefef);
+    filter: blur(5px);
+    z-index: 1;
+    right: 55%;
+    bottom: 10%;
+  }
   -ms-overflow-style: none;
   gap: 15px;
   position: relative;
@@ -509,14 +538,16 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    background-color: #0047b8;
+    border-bottom: 1px solid #ffdbdb;
     padding: 0 1rem;
+    z-index: 99999;
+    position: relative;
     img {
       height: 2rem;
     }
     h3 {
       text-transform: uppercase;
-      color: white;
+      color: #494949;
       span {
         color: orange;
       }
@@ -539,9 +570,9 @@ const Container = styled.div`
         justify-content: center;
         align-items: center;
         transition: 0.5s ease;
-        background-color: #ba3200;
+        background-color: #ffffff;
         border-radius: 100%;
-        color: white;
+        color: #ff9595;
         &:hover {
           background-color: orangered;
           color: white;
@@ -560,12 +591,12 @@ const Container = styled.div`
     overflow: hidden;
     gap: 0.8rem;
     height: "100vh";
-    overflow: auto;
-
+    overflow-x: auto;
+    z-index: 99;
     &::webkit-scrollbar {
       width: 0.2rem;
       &-thumb {
-        background-color: #88640039;
+        background-color: #ffffff39;
         width: 0.1rem;
         border-radius: 1rem;
       }
@@ -579,7 +610,7 @@ const Container = styled.div`
       justify-content: space-between;
       display: flex;
       transition: 0.5s ease-in-out;
-      border-radius: 50px;
+
       cursor: pointer;
       position: relative;
       .avatar {
@@ -588,14 +619,18 @@ const Container = styled.div`
         align-items: center;
         gap: 0.8rem;
         img {
-          height: 2rem;
+          height: 2.5rem;
         }
         .username {
           h3 {
-            color: #ffffff;
-            font-size: 12px;
+            color: #000000;
+            font-size: 14px;
             text-transform: capitalize;
-            font-style: italic;
+            font-weight: bold;
+            width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       }
@@ -636,15 +671,16 @@ const Container = styled.div`
       }
     }
     .selected {
-      box-shadow: 0 0 55px red inset;
+      border-bottom: 1px solid #c9c9c9;
     }
   }
   .currentUser {
-    background-color: #001789;
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 2rem;
+    z-index: 999;
+    border-top: 1px solid #ffdbdb;
     .avatar {
       display: flex;
       justify-content: space-between;
@@ -657,8 +693,9 @@ const Container = styled.div`
         }
       }
       .username {
-        h3 {
-          color: white;
+        p {
+          color: #383838;
+          font-weight: bold;
         }
       }
     }

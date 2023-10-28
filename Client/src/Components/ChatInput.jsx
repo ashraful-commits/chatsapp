@@ -46,6 +46,8 @@ const ChatInput = ({ handleSendMessage, socket, currentChat, currentUser }) => {
 
   return (
     <Container>
+      <div className="circle-blur"></div>
+      <div className="circle-blur2"></div>
       <div className="button-container">
         <div className="emoji">
           <BsEmojiSmileFill onClick={handleEmojiPickerHidShow} />
@@ -72,46 +74,70 @@ const Container = styled.div`
   display: grid;
   height: 100%;
   min-height: 60px;
-  /* overflow: hidden; */
   grid-template-columns: 10% 90%;
   align-items: center;
   justify-content: space-around;
-  background-color: #100066;
+  width: 100%;
   padding: 0 4rem;
-
   position: relative;
+  .circle-blur {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #effde7;
+    opacity: 0.9;
+    border-radius: 30px;
+    position: absolute;
+    top: 0%;
+    right: 5%;
+    filter: blur(15px);
+    z-index: 0;
+  }
+  .circle-blur2 {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #effded;
+    opacity: 0.9;
+    border-radius: 30px;
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    filter: blur(15px);
+    z-index: 0;
+  }
   .button-container {
     display: flex;
     align-items: center;
-    color: white;
+    color: #ffdada;
     gap: 2rem;
     position: relative;
-    z-index: 999;
+    z-index: 99999;
     .emoji {
       position: absolute;
       left: 0;
       z-index: 999999999999;
       svg {
         font-size: 1.5rem;
-        color: #ffff00c8;
+        color: #ff5500;
         cursor: pointer;
       }
       .EmojiPickerReact {
         position: absolute;
         bottom: 35px;
-        background-color: #080420;
-        border-color: orange;
-        box-shadow: 0 0 30px orange;
+        background-color: #ffffff;
+
+        box-shadow: 0 0 30px #ffcece;
         z-index: 99999999999;
 
         .epr-search-container {
           input {
-            background-color: #080420;
+            background-color: #ffffff;
             border: none;
           }
         }
         .epr-emoji-category-label {
-          background-color: #080420;
+          background-color: #ffffff;
         }
       }
     }
@@ -122,26 +148,25 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     border-radius: 2rem;
-    background-color: #c7c7c7;
+    background-color: #ffffff;
     border-radius: 2rem;
     overflow: hidden;
+    z-index: 99999;
     input {
       width: 90%;
-
       background-color: transparent;
       color: #000000;
       border: none;
       padding-left: 1rem;
       font-size: 12px;
       &::selection {
-        background-color: #9186f3;
+        background-color: #ffffff;
       }
       &:focus {
         outline: none;
       }
     }
     button {
-      padding: 0.7rem 2rem;
       border-radius: 2rem;
       display: flex;
       justify-content: center;
@@ -163,14 +188,11 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     border-radius: 2rem;
-    background-color: #c7c7c7;
     border-radius: 2rem;
     overflow: hidden;
     height: 40px;
     input {
       width: 90%;
-
-      background-color: transparent;
       color: #000000;
       border: none;
       padding-left: 1rem;
@@ -183,8 +205,9 @@ const Container = styled.div`
       }
     }
     button {
-      padding: 0.7rem 2rem;
       border-radius: 2rem;
+      height: 100%;
+      width: 70px;
       display: flex;
       justify-content: center;
       align-items: center;

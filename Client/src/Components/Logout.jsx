@@ -29,8 +29,8 @@ const Container = styled.div`
   border-radius: 100%;
   background-color: #ff4800;
   border: none;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   button {
     background-color: transparent;
     border: none;
@@ -38,7 +38,9 @@ const Container = styled.div`
     color: white;
     width: 100%;
     height: 100%;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     svg {
       color: #ebe7ff;
     }

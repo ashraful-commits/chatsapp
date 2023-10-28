@@ -33,7 +33,7 @@ const AllChats = ({ contact, currentUser, onlineUser }) => {
                 key={index}
               >
                 <Avatar
-                  sx={{ height: "30px", width: "30px" }}
+                  sx={{ height: "40px", width: "40px" }}
                   alt={contact?.username}
                   src={`data:image/svg+xml;base64,${contact?.avatarImage}`}
                 />
@@ -61,23 +61,23 @@ const Container = styled.div`
   justify-content: start;
   height: 65px;
   padding: 0 10px;
-  background-color: #0003634a;
+
   ::-webkit-scrollbar {
     width: 0px;
     height: 3px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #2200fc;
+    background-color: #ffffff;
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #4d0000;
+    background-color: #ffffff;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #ff3700;
+    background-color: #ffffff;
   }
 
   /* For other browsers that support the scrollbar-width property (e.g., Firefox) */

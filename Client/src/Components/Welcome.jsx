@@ -4,6 +4,11 @@ import styled from "styled-components";
 const Welcome = ({ currentUser }) => {
   return (
     <Container>
+      <div className="blur"></div>
+      <div className="blur1"></div>
+      <div className="blur2"></div>
+      <div className="blur3"></div>
+      <div className="blur4"></div>
       <img
         src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/585d0331234507.564a1d239ac5e.gif"
         alt="robot"
@@ -23,7 +28,66 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   color: white;
-  background-color: #030029;
+  background-color: #fff;
+  position: relative;
+  z-index: 0;
+  padding: 10px;
+  .blur {
+    width: 300px;
+    height: 20%;
+    background-color: #ffe0d0;
+    border-radius: 50px;
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    filter: blur(2px);
+    z-index: -1;
+    border-bottom-right-radius: 0;
+  }
+  .blur1 {
+    width: 15%;
+    height: 5%;
+    background-color: #ffebeb;
+    border-radius: 30px;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    filter: blur(2px);
+    z-index: -1;
+  }
+  .blur2 {
+    width: 15%;
+    height: 5%;
+    background-color: #f0ffeb;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 15%;
+    right: 25%;
+    filter: blur(2px);
+    z-index: -1;
+  }
+  .blur3 {
+    width: 15%;
+    height: 5%;
+    background-color: #ffebeb;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 5%;
+    left: 25%;
+    filter: blur(2px);
+    z-index: -1;
+  }
+  .blur4 {
+    width: 15%;
+    height: 5%;
+    background-color: #efffeb;
+    border-radius: 30px;
+    position: absolute;
+    top: 5%;
+    right: 25%;
+    filter: blur(2px);
+    z-index: -1;
+  }
   img {
     height: 2rem;
     margin: 1rem 0;
@@ -43,6 +107,10 @@ const Container = styled.div`
     font-size: 13px;
   }
   @media screen and (max-width: 768px) {
+    .blur {
+      top: 45%;
+      left: 20%;
+    }
   }
 `;
 export default Welcome;

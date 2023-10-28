@@ -116,8 +116,20 @@ const ChatContainer = ({
   }
   return (
     <Container>
+      <div className="blur1"></div>
+      <div className="blur2"></div>
+      <div className="blur3"></div>
+      <div className="blur4"></div>
+      <div className="blur5"></div>
       <div className="chat-header">
+        <div className="circle-blur"></div>
+        <div className="circle-blur2"></div>
         <div className="user-details">
+          <div className="username">
+            <h3>{currentChat?.username}</h3>
+          </div>
+        </div>
+        <div className="notification">
           <div className="avatar">
             <div className="img">
               {currentChat?.avatarImage ? (
@@ -133,9 +145,6 @@ const ChatContainer = ({
                 </Link>
               )}
             </div>
-          </div>
-          <div className="username">
-            <h3>{currentChat?.username}</h3>
           </div>
         </div>
       </div>
@@ -178,7 +187,7 @@ const ChatContainer = ({
                   </Box>
                   <div className="menu">
                     <button onClick={() => setMsgMenu(!msgMenu)}>
-                      <BsThreeDotsVertical />
+                      <BsThreeDotsVertical color="gray" />
                     </button>
                     <div className="menu-item">
                       {msgMenu && (
@@ -196,7 +205,9 @@ const ChatContainer = ({
             );
           })
         ) : (
-          <p style={{ textAlign: "center", color: "white" }}>No chat found!</p>
+          <p style={{ textAlign: "center", color: "#000000" }}>
+            No chat found!
+          </p>
         )}
         <div ref={chatContainerRef} style={{ width: "40px", height: "40px" }}>
           {typeIng ? (
@@ -206,12 +217,14 @@ const ChatContainer = ({
           )}
         </div>
       </div>
-      <ChatInput
-        handleSendMessage={handleSendMessage}
-        socket={socket}
-        currentChat={currentChat}
-        currentUser={currentUser}
-      />
+      <Box sx={{ width: "100%", backgroundColor: "#ffd3d3" }}>
+        <ChatInput
+          handleSendMessage={handleSendMessage}
+          socket={socket}
+          currentChat={currentChat}
+          currentUser={currentUser}
+        />
+      </Box>
     </Container>
   );
 };
@@ -219,29 +232,132 @@ const Container = styled.div`
   display: grid;
   gap: 0.1rem;
   overflow: hidden;
-  grid-template-rows: 70px auto 60px;
-  background-color: #080e39;
+  grid-template-rows: 60px auto 60px;
+  background-color: #ffffff;
   z-index: 0;
+  position: relative;
 
+  .blur1 {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: #fffafa;
+    border-radius: 30px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    filter: blur(5px);
+    z-index: -1;
+  }
+  .blur2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: #f6fff5;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    filter: blur(5px);
+    z-index: -1;
+  }
+  .blur3 {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: #fff5f5;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    filter: blur(5px);
+    z-index: -1;
+  }
+  .blur4 {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: #fbfffa;
+    border-radius: 30px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    filter: blur(5px);
+    z-index: -1;
+  }
+  .blur5 {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: #f9fff8;
+    border-radius: 30px;
+    position: absolute;
+    top: 35%;
+    right: 25%;
+    filter: blur(5px);
+    z-index: -1;
+  }
   .chat-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    background-color: #ffdada;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .circle-blur {
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      background-color: #ffffff;
+      opacity: 0.9;
+      border-radius: 30px;
+      position: absolute;
+      top: 0%;
+      right: 5%;
+      filter: blur(15px);
+      z-index: 0;
+    }
+    .circle-blur2 {
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      background-color: #ffffff;
+      opacity: 0.9;
+      border-radius: 30px;
+      position: absolute;
+      top: 0%;
+      left: 5%;
+      filter: blur(15px);
+      z-index: 0;
+    }
+    .notification {
+      border-radius: 100%;
+      z-index: 999;
+      .avatar {
+        .img {
+          img {
+            height: 2.2rem;
+          }
+        }
+      }
+    }
     .user-details {
+      z-index: 999;
       display: flex;
       align-items: center;
       gap: 1rem;
       .avatar {
         .img {
           img {
-            height: 2rem;
+            height: 2.5rem;
           }
         }
       }
       .username {
         h3 {
-          color: #ffffff;
+          color: #1e1e1e;
           font-size: 14px;
           text-transform: capitalize;
         }
@@ -266,7 +382,7 @@ const Container = styled.div`
         padding: 0.6rem;
 
         color: #d1d1d1;
-        border-radius: 1rem;
+        border-radius: 1.5rem;
 
         p {
           overflow-wrap: break-word;
@@ -276,12 +392,14 @@ const Container = styled.div`
     .sender {
       justify-content: flex-end;
       .content {
-        background-color: #fc5353;
         color: white;
         border-bottom-right-radius: 0;
         display: flex;
         gap: 10px;
-        box-shadow: -2px -2px 2px white;
+        border: 1px solid #1eff00;
+        background-color: #ffffff;
+        padding: 20px;
+
         &:hover {
           .menu {
             opacity: 1;
@@ -290,6 +408,7 @@ const Container = styled.div`
         .menu {
           position: relative;
           opacity: 0;
+          z-index: 9999;
           .menu-item {
             position: absolute;
             background-color: #fff;
@@ -323,13 +442,14 @@ const Container = styled.div`
     .recieved {
       justify-content: flex-start;
       .content {
-        background-color: #ffffff;
         color: #000000;
+        background-color: #ffffff;
         border-top-left-radius: 0;
         display: flex;
         gap: 10px;
-        box-shadow: -4px -4px 5px orangered;
-        &:hover {
+        border: 1px solid #ff0505;
+        padding: 20px;
+        #baf#6cff91a7 &:hover {
           .menu {
             opacity: 1;
           }
