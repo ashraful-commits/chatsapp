@@ -168,6 +168,7 @@ const Container = styled.div`
     button {
       border-radius: 2rem;
       display: flex;
+      height: 100%;
       justify-content: center;
       align-items: center;
       background-color: orangered;
@@ -207,6 +208,7 @@ const Container = styled.div`
       border-radius: 2rem;
       width: 70px;
       display: flex;
+      height: 100%;
       justify-content: center;
       align-items: center;
       background-color: orangered;
