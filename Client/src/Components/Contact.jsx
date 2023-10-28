@@ -96,7 +96,11 @@ const Contact = ({
                 bgcolor: "rgb(255, 213, 215)",
               }}
             >
-              <Box>
+              <Box
+                sx={{
+                  overflow: "auto",
+                }}
+              >
                 <Box sx={{ padding: "0px" }}>
                   <Typography
                     sx={{
@@ -121,7 +125,7 @@ const Contact = ({
                     })}
                   />
                 </Box>
-                <Box sx={{ padding: "0 10px" }}>
+                <Box sx={{ padding: "0 10px", height: "100vh" }}>
                   <Typography
                     sx={{
                       borderBottom: "1px solid gray",
@@ -134,7 +138,7 @@ const Contact = ({
                   >
                     Chats
                   </Typography>
-                  <List>
+                  <List sx={{ overflow: "auto", height: "100vh" }}>
                     {contact?.filter((element) => {
                       return chats?.some((chat) =>
                         chat.members.some((item) => item === element._id)
@@ -489,7 +493,7 @@ const Contact = ({
 };
 const Container = styled.div`
   display: grid;
-  grid-template-rows: 60px auto 60px;
+  grid-template-rows: 60px 1fr 60px;
   overflow: hidden;
   background-color: #c9ffd1;
   z-index: 0;
@@ -588,10 +592,8 @@ const Container = styled.div`
     flex-direction: column;
     align-items: start;
     padding: 0 20px;
-    overflow: hidden;
     gap: 0.8rem;
-    height: "100vh";
-    overflow-x: auto;
+    overflow: auto;
     z-index: 99;
     &::webkit-scrollbar {
       width: 0.2rem;

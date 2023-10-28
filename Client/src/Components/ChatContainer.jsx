@@ -232,7 +232,7 @@ const Container = styled.div`
   display: grid;
   gap: 0.1rem;
   overflow: hidden;
-  grid-template-rows: 60px auto 60px;
+  grid-template-rows: 60px 1fr 60px;
   background-color: #ffffff;
   z-index: 0;
   position: relative;

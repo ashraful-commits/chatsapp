@@ -1,4 +1,4 @@
-import { Avatar, AvatarGroup, Box } from "@mui/material";
+import { Avatar, AvatarGroup, Box, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -25,29 +25,33 @@ const AllChats = ({ contact, currentUser, onlineUser }) => {
             padding: "10px 5px",
           }}
         >
-          {contact?.map((contact, index) => {
-            return (
-              <button
-                onClick={() => handleAddChat(contact?._id)}
-                className="onlineButton"
-                key={index}
-              >
-                <Avatar
-                  sx={{ height: "40px", width: "40px" }}
-                  alt={contact?.username}
-                  src={`data:image/svg+xml;base64,${contact?.avatarImage}`}
-                />
+          {contact?.length > 0 ? (
+            contact?.map((contact, index) => {
+              return (
+                <button
+                  onClick={() => handleAddChat(contact?._id)}
+                  className="onlineButton"
+                  key={index}
+                >
+                  <Avatar
+                    sx={{ height: "40px", width: "40px" }}
+                    alt={contact?.username}
+                    src={`data:image/svg+xml;base64,${contact?.avatarImage}`}
+                  />
 
-                {onlineUser.some(
-                  (onlineU) => onlineU?.userId === contact?._id
-                ) ? (
-                  <span className="onlineDots"></span>
-                ) : (
-                  <span className="offlineDots"></span>
-                )}
-              </button>
-            );
-          })}
+                  {onlineUser.some(
+                    (onlineU) => onlineU?.userId === contact?._id
+                  ) ? (
+                    <span className="onlineDots"></span>
+                  ) : (
+                    <span className="offlineDots"></span>
+                  )}
+                </button>
+              );
+            })
+          ) : (
+            <Typography>No contacts</Typography>
+          )}
         </Box>
       </Container>
     </>
