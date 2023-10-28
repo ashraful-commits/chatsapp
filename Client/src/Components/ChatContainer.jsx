@@ -238,7 +238,7 @@ const ChatContainer = ({
 const Container = styled.div`
   display: grid;
   gap: 0.1rem;
-  min-height: 100vh;
+
   overflow: hidden;
   grid-template-rows: 60px 1fr 60px;
   background-color: #ffffff;
@@ -497,7 +497,7 @@ const Container = styled.div`
     }
   }
   @media (max-width: 767px) {
-    grid-template-rows: 60px 78vh 60px;
+    grid-template-rows: 60px 1fr 60px;
     .chat-messages {
       padding: 1rem 1rem;
       display: flex;
