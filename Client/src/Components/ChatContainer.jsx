@@ -416,7 +416,7 @@ const Container = styled.div`
         border: 1px solid #1eff00;
         background-color: #ffffff;
         padding: 20px;
-
+        text-align: right;
         &:hover {
           .menu {
             opacity: 1;
@@ -467,7 +467,7 @@ const Container = styled.div`
         gap: 10px;
         border: 1px solid #ff0505;
         padding: 20px;
-
+        text-align: left;
         &:hover {
           .menu {
             opacity: 1;
