@@ -183,7 +183,13 @@ const Contact = ({
                                   )}
                                 </ListItemIcon>
                                 <ListItemText
-                                  sx={{ color: "#5f5f5f" }}
+                                  sx={{
+                                    color: "#5f5f5f",
+                                    whiteSpace: "nowrap",
+                                    overflow: "hidden",
+                                    width: "130px",
+                                    textOverflow: "ellipsis",
+                                  }}
                                   primary={item.username}
                                 />
                                 <Box
