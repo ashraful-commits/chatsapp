@@ -116,6 +116,7 @@ const Container = styled.div`
       position: absolute;
       left: 0;
       z-index: 999999999999;
+      padding-left: 10px;
       svg {
         font-size: 1.5rem;
         color: #ff5500;
