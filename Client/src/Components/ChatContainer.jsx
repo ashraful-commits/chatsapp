@@ -219,10 +219,20 @@ const ChatContainer = ({
       </div>
       <Box
         sx={{
-          width: "100%",
+          width: "80%",
           borderTop: "2px solid #eee",
-          position: "sticky",
+          position: "fixed",
           bottom: 0,
+          right: 0,
+          "@media (max-width:767px)": {
+            width: "100%",
+          },
+          "@media (min-width:768px) and (max-width:1023px)": {
+            width: "70%",
+          },
+          "@media (min-width:1024px) and (max-width:1364px)": {
+            width: "80%",
+          },
         }}
       >
         <ChatInput
@@ -238,7 +248,6 @@ const ChatContainer = ({
 const Container = styled.div`
   display: grid;
   gap: 0.1rem;
-
   overflow: hidden;
   grid-template-rows: 60px 1fr 60px;
   background-color: #ffffff;
@@ -380,7 +389,6 @@ const Container = styled.div`
     text-align: center;
     gap: 1rem;
     overflow: auto;
-
     z-index: 0;
 
     .message {
@@ -497,7 +505,6 @@ const Container = styled.div`
     }
   }
   @media (max-width: 767px) {
-    grid-template-rows: 60px 1fr 60px;
     .chat-messages {
       padding: 1rem 1rem;
       display: flex;
